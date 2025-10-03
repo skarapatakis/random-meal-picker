@@ -1,7 +1,17 @@
 package com.programmerabroad.www.random.meal.picker.entity;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+import java.util.List;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Meal implements Serializable {
     public String idMeal;
     public String strMeal;
@@ -9,6 +19,7 @@ public class Meal implements Serializable {
     public String strCategory;
     public String strArea;
     public String strInstructions;
+    public String[] instructions;
     public String strMealThumb;
     public String strTags;
     public String strYoutube;
@@ -56,6 +67,7 @@ public class Meal implements Serializable {
     public Object strImageSource;
     public Object strCreativeCommonsConfirmed;
     public Object dateModified;
+
 }
 
 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Layout page</title>
+    <script src="common-script.js"></script>
+    <style>
+        td:hover{
+            cursor: pointer;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Random meal picker</h1>
+</header>
+<section layout:fragment="content">
+    </p>
+    <div th:object="${meal}">
+
+        <label>Id: </label><span th:text="*{idMeal}"></span>
+        <br/>
+        <h3 style="background-color: yellow; color: blue" th:text="*{strMeal}"></h3>
+
+        <label>Category: </label><span th:text="*{strCategory}"></span>
+        <br/>
+        <img th:src="@{*{strMealThumb}}" alt="cat"/>
+        <br/>
+        <a target="_blank" th:href="@{*{strYoutube}}">Click here for the Youtube video</a>
+        <br/>
+        <br/>
+        <br/>
+        <span><u>Instructions:</u></span>
+        <table>
+            <tr th:each="instruction : *{instructions}" style="display:block; margin-bottom: 5px">
+                <td style="border-left: 3px solid green; padding-left: 10px">
+                    <span th:text="${instruction}"></span>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <br/>
+        <label>Source: </label>
+        <a target="_blank" th:href="@{*{strSource}}">Click here</a>
+    </div>
+</section>
+</body>
+</html>
