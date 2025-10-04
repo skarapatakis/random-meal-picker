@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+        <start-class>com.programmerabroad.www.random.meal.picker.RandomMealPickerApplication</start-class>
 	</properties>
 	<dependencies>
 		<dependency>
